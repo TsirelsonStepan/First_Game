@@ -121,6 +121,16 @@ public class Main : MonoBehaviour
                 }
             }
     }
+
+    public static Unit Create_Unit(int size, int spec, int carrying_capacity, int AP)
+    {
+        Unit unit = new();
+        unit.size = size;
+        unit.spec = spec;
+        unit.carrying_capacity = carrying_capacity;
+        unit.AP = AP;
+        return unit;
+    }
 }
 
 public static class Data
@@ -151,17 +161,12 @@ public static class Data
         new int[] { 0, 0, 0, 0, 0, 0, 0, 0 },
         new int[] { -3, 0, 0, 0, 0, 0, 0, 1 },
         new int[] { -2, 0, -4, 0, 0, 0, 0, 2 }
-    };/*
-    public static Unit[] unit_presets = new Unit[]
-    {
-        Create_Unit(); //scout
     };
-
-    static Unit Create_Unit(int AP, int size, int spec, int carrying_capacity, int range)
+    public static Unit[] units_presets = new Unit[]
     {
-        Unit unit = new Unit();
-
-    }*/
+        Main.Create_Unit(10, 0, 6, 4),//scout
+        Main.Create_Unit(10, 1, 2, 6)//warior
+    };
 }
 
 /*

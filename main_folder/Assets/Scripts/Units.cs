@@ -47,7 +47,7 @@ public class Units : MonoBehaviour
         if (anim_active)
         {
             animator.gameObject.transform.position += (tilemap.CellToWorld(closest_cell) - tilemap.CellToWorld(current_cell)) / 200 * ((speed * 10 + 1) / 2);
-            if (Vector3.Distance(animator.gameObject.transform.position, tilemap.CellToWorld(path[path.Count - 1])) < 0.01f)
+            if (Vector3.Distance(animator.gameObject.transform.position, tilemap.CellToWorld(path[path.Count - 1])) < 0.02f)
             {
                 Data.units_map[path[0].x, path[0].y] = null;
                 anim_active = false;
@@ -57,7 +57,7 @@ public class Units : MonoBehaviour
             }
 
 
-            else if (Vector3.Distance(animator.gameObject.transform.position, tilemap.CellToWorld(closest_cell)) < 0.01f)
+            else if (Vector3.Distance(animator.gameObject.transform.position, tilemap.CellToWorld(closest_cell)) < 0.02f)
             {
                 current_cell = closest_cell;
                 closest_cell = path[path.IndexOf(closest_cell) + 1];
@@ -101,7 +101,7 @@ public class Units : MonoBehaviour
                 };
                 availability = true;
             }
-            else if (mouse_cell != path[path.Count - 1] & path.Count <= Data.units_map[path[0].x, path[0].y].range & !path.Contains(mouse_cell) & direction.Keys.Contains(path[path.Count - 1] - mouse_cell))
+            else if (mouse_cell != path[path.Count - 1] & path.Count <= Data.units_map[path[0].x, path[0].y].AP & !path.Contains(mouse_cell) & direction.Keys.Contains(path[path.Count - 1] - mouse_cell))
             {
                 path.Add(mouse_cell);
                 Draw_Path();

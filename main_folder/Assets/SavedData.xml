@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Current_Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <resolution_width>1920</resolution_width>
+  <resolution_height>1080</resolution_height>
+  <language>English</language>
+  <fullscreen>true</fullscreen>
+  <save_files_names>
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+  </save_files_names>
+  <speed>1</speed>
+</Current_Settings>

@@ -95,7 +95,6 @@ public class Unit
     public int size;
     public int spec;
     public int carrying_capacity;
-    public int range;
 }
 
 public class Game_Serializator

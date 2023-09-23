@@ -29,17 +29,20 @@ public class Main_Menu_Ui_Logic : MonoBehaviour
         Unit[,] units_map = new Unit[size, size];
         Vector3 grid_pos;
         Vector2Int pos;
-
+        Unit[] units_presets = Data.units_presets;
         do
         {
             pos = new Vector2Int(Random.Range(5, size - 5), Random.Range(5, size - 5));
             if (raw_map[pos.x, pos.y] == 0)
             {
-                units_map[pos.x, pos.y] = new Unit();
+                units_map[pos.x, pos.y] = units_presets[0];
+
                 units_map[pos.x, pos.y].size = 10;
-                units_map[pos.x, pos.y].coord = pos;
                 units_map[pos.x, pos.y].spec = 0;
-                units_map[pos.x, pos.y].range = 4;
+                units_map[pos.x, pos.y].carrying_capacity = 6;
+                units_map[pos.x, pos.y].AP = 4;
+
+                units_map[pos.x, pos.y].coord = pos;
                 int new_size_x = size + 37 - ((3 - size / 40) * 20);
                 grid_pos = new Vector3(-((float)pos.x / size * new_size_x - new_size_x / 2), -((float)pos.y / size * new_size_x - new_size_x / 2) / 2, 0);
                 break;
